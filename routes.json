@@ -1,0 +1,7 @@
+{
+  "routes": [
+    ["GET", "/", "search.html", {}],
+    ["GET", "/results", "results.html", { "results": ["GET", "/search/repositories", "forward_params"] }]
+  ]
+}
+
