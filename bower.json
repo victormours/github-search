@@ -1,0 +1,19 @@
+{
+  "name": "github-search",
+  "version": "0.0.0",
+  "homepage": "https://github.com/victormours/github-search",
+  "authors": [
+    "Victor Mours <victor.mours@tigerlilyapps.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.4.7"
+  }
+}
