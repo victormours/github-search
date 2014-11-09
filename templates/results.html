@@ -1,30 +1,27 @@
-<link rel="stylesheet" type="text/css" href="css/foundation.css">
-<div class="row">
-  <div class="small-2 large-2 columns"></div>
-  <div class="small-6 large-8 columns">
-    <h1><a href='/'>Github search</a></h1>
+<form action="/results">
+  <label for="name">Repository name:</label>
+  <input type="text" name="name" value={{params.name}}>
+  <label for="name">Language:</label>
+  <input type="text" name="language" value={{params.language}}>
+  <input type="submit" value="Search">
+</form>
 
-    <form action="/results">
-      <label for="q">Search terms:</label>
-      <input type="text" name="q">
-      <input type="submit" value="Search">
-    </form>
+{{#results}}
+  {{total_count}} results found for {{params.name}}
+  {{#items}}
+    <div class="row">
+      <div class="small-3 large-3 columns">
+        <img src="{{owner.avatar_url}}" width="111" height="111">
+      </div>
+      <div class="small-7 large-8 columns">
+        <a href="{{html_url}}">{{full_name}}</a>
+        <p>{{description}}</p>
+        <p>{{stargazers_count}} stars</p>
+        <p>{{language}}</p>
+      </div>
+    </div>
+  {{/items}}
+{{/results}}
 
-    {{#results}}
-      {{total_count}} results found
-      {{#items}}
-        <div class="row">
-          <div class="small-3 large-3 columns">
-            <img src="{{owner.avatar_url}}" width="111" height="111">
-          </div>
-          <div class="small-7 large-8 columns">
-            <a href="{{html_url}}">{{full_name}}</a>
-            <p>{{description}}</p>
-          </div>
-        </div>
-      {{/items}}
-    {{/results}}
-  </div>
-  <div class="small-2 large-2 columns"></div>
-</div>
 
+{{results}}
